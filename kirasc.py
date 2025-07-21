@@ -34,7 +34,7 @@ def banner():
   ████          ████
 
       ~KIRA SOCIETY~
- instagram: @0xkirasociety
+ \033[1;35minstagram: @0xkirasociety\033[0m
 '''
     print("\033[91m" + ascii_art + "\033[0m")
 
@@ -196,13 +196,13 @@ def main():
     while True:
         banner()
         print("TOOLLARIMIZ: DAHA EKLENECEK ÖNERİ İÇİN İG DM                      ")
-        print("  ╔════════════════════════╗")
-        print("  ║ \033[91m[1] DDoS Attack\033[0m     ║")
-        print("  ║ \033[91m[2] İnstagram Hack\033[0m ║")
-        print("  ║ \033[91m[3] Port Scanner\033[0m    ║")
-        print("  ║ \033[91m[4] IP Lookup\033[0m       ║")
-        print("  ║ \033[91m[0] Exit\033[0m          ║")
-        print("  ╚════════════════════════╝")
+        print("  \033[1;33m╔════════════════════════╗\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[1] DDoS Attack\033[0m     \033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[2] İnstagram Hack\033[0m \033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[3] Port Scanner\033[0m    \033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[4] IP Lookup\033[0m       \033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[0] Exit\033[0m          \033[1;33m║\033[0m")
+        print("  \033[1;33m╚════════════════════════╝\033[0m")
         print("\033[0m")
         
         choice = input("Seç: ").strip()
