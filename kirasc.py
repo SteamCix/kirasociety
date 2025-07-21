@@ -14,7 +14,6 @@ def banner():
     ascii_art = r'''
         .-"      "-.
        /            \
-      |              |
       |,  .-.  .-.  ,|
       | )(_o/  \o_)( |
       |/     /\     \|
@@ -24,10 +23,9 @@ def banner():
         \          /
          `--------`
        ~KIRA SOCIETY~
-  '''
- print("\033[91m" + ascii_art + "\033[0m")
-
-print("\033[1;35m Instagram: @0xkirasociety \033[0m") 
+    '''
+    print("\033[1;35mInstagram: @0xkirasociety\033[0m") 
+    print("\033[91m" + ascii_art + "\033[0m") 
 
 
 def ddos_attack():
