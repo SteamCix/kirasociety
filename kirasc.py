@@ -25,9 +25,10 @@ def banner():
          `--------`
        ~KIRA SOCIETY~
   '''
-  print("\033[1;35m instagram: @0xkirasociety \033[0m") 
- 
-    print("\033[91m" + ascii_art + "\033[0m")
+ print("\033[91m" + ascii_art + "\033[0m")
+
+print("\033[1;35m Instagram: @0xkirasociety \033[0m") 
+
 
 def ddos_attack():
     banner()
