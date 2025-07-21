@@ -195,13 +195,13 @@ def ip_lookup():
 def main():
     while True:
         banner()
-        print("\033[1;33m")
+        print("TOOLLARIMIZ: DAHA EKLENECEK ÖNERİ İÇİN İG DM                      ")
         print("  ╔════════════════════════╗")
-        print("  ║ \033[91m[1] DDoS Attack\033[0m                 ║")
-        print("  ║ \033[91m[2] İnstagram Hack\033[0m              ║")
-        print("  ║ \033[91m[3] Port Scanner\033[0m                ║")
-        print("  ║ \033[91m[4] IP Lookup\033[0m                   ║")
-        print("  ║ \033[91m[0] Exit\033[0m                        ║")
+        print("  ║ \033[91m[1] DDoS Attack\033[0m     ║")
+        print("  ║ \033[91m[2] İnstagram Hack\033[0m ║")
+        print("  ║ \033[91m[3] Port Scanner\033[0m    ║")
+        print("  ║ \033[91m[4] IP Lookup\033[0m       ║")
+        print("  ║ \033[91m[0] Exit\033[0m          ║")
         print("  ╚════════════════════════╝")
         print("\033[0m")
         
