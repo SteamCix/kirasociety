@@ -12,10 +12,10 @@ def clear():
 def banner():
     clear()
     ascii_art = r'''
-██████████
-██░░░░░░░░░░██
-██░░░░░░░░░░░░░░██
-██░░░░░░░░░░░░░░░░██
+      ██████████
+    ██░░░░░░░░░░██
+  ██░░░░░░░░░░░░░░██
+ ██░░░░░░░░░░░░░░░░██
 ██░░░░░░░░░░░░░░░░░░██
 ██░░░░░░░░░░░░░░░░░░██
 ██░░░░░░░░░░░░░░░░░░██
@@ -34,7 +34,7 @@ def banner():
   ████          ████
 
       ~KIRA SOCIETY~
-      instagram: @0xkirasociety
+ instagram: @0xkirasociety
 '''
     print("\033[91m" + ascii_art + "\033[0m")
 
@@ -149,7 +149,7 @@ def port_scanner():
     start_port = int(input("Başlangıç Portu : ") or 1)
     end_port = int(input("Sınır Port: ") or 1024)
     
-    print(f"\nTaranan İp: {target_ip} Başlangıç Portundan {start_port} Buna {end_port}...")
+    print(f"\nTaranan İp: {target_ip} Başlangıç Portu {start_port} Sınır {end_port}...")
     
     open_ports = []
     for port in range(start_port, end_port + 1):
@@ -195,13 +195,13 @@ def ip_lookup():
 def main():
     while True:
         banner()
-        print("\033[91m")
+        print("\033[1;33m")
         print("  ╔════════════════════════╗")
-        print("  ║ [1] DDoS Attack                 ║")
-        print("  ║ [2] Brute Force                 ║")
-        print("  ║ [3] Port Scanner                ║")
-        print("  ║ [4] IP Lookup                   ║")
-        print("  ║ [0] Exit                        ║")
+        print("  ║ \033[91m[1] DDoS Attack\033[0m                 ║")
+        print("  ║ \033[91m[2] İnstagram Hack\033[0m              ║")
+        print("  ║ \033[91m[3] Port Scanner\033[0m                ║")
+        print("  ║ \033[91m[4] IP Lookup\033[0m                   ║")
+        print("  ║ \033[91m[0] Exit\033[0m                        ║")
         print("  ╚════════════════════════╝")
         print("\033[0m")
         
