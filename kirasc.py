@@ -334,7 +334,7 @@ def main():
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[2] Instagram Hack     " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[3] Port Scanner       " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[4] IP Lookup          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Yapma" + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Yapma  " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] IP Logger          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit               " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "╚════════════════════════╝" + Style.RESET_ALL)
