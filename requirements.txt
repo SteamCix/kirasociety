@@ -1,0 +1,5 @@
+requests==2.31.0
+Flask==2.3.2
+pyngrok==7.0.0
+colorama==0.4.6
+pyinstaller==5.13.0
