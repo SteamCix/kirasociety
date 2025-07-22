@@ -1,4 +1,4 @@
-git clone https://github.com/SteamCix/kirasociety5
+git clone https://github.com/SteamCix/kirasociety
 
 cd kirasociety5
 
