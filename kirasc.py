@@ -7,6 +7,9 @@ import time
 from datetime import datetime
 from flask import Flask, request
 import pyngrok.ngrok as ngrok
+from colorama import Fore, Style, init
+
+init()
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -26,9 +29,10 @@ def banner():
          `--------`
        ~KIRA SOCIETY~
     '''
-    print("\033[1;35mInstagram: @0xkirasociety\033[0m") 
-    print("\033[91m" + ascii_art + "\033[0m")
+    print(Fore.MAGENTA + "Instagram: @0xkirasociety" + Style.RESET_ALL) 
+    print(Fore.RED + ascii_art + Style.RESET_ALL)
 
+banner()
 print("Geçersiz seçim!")
 
 def start_ip_logger():
