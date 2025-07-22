@@ -330,13 +330,13 @@ def main():
     while True:
         banner()
         print("  " + Fore.YELLOW + "╔════════════════════════╗" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[1] DDoS Attack       " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[2] Instagram Hack    " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[3] Port Scanner      " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[4] IP Lookup         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Oluştur" + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] IP Logger         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
-        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit              " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[1] DDoS Attack        " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[2] Instagram Hack     " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[3] Port Scanner       " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[4] IP Lookup          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Yapma" + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] IP Logger          " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit               " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "╚════════════════════════╝" + Style.RESET_ALL)
         
         choice = input("Seçim yapın: ").strip()
@@ -352,8 +352,8 @@ def main():
         elif choice == "5":
             rat_payload_creator()
         elif choice == "6":
-            ip_logger()
-        elif choice == "0":
+            start_ip_logger()
+       elif choice == "0":
             print("Çıkış yapılıyor...")
             break
         else:
