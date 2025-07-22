@@ -394,6 +394,7 @@ def main():
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[7] The Harvester      " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[8] SQLMap             " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[9] SMS Bomber         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[10] İp Logger         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL
         print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit               " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
         print("  " + Fore.YELLOW + "╚════════════════════════╝" + Style.RESET_ALL)
 
@@ -416,6 +417,8 @@ def main():
             sqlmap_tool()
         elif choice == "9":
             sms_bomber() 
+        elif choice == "10":
+            start_ip_logger() 
         elif choice == "0":
             print("Çıkış yapılıyor...")
             sys.exit()
