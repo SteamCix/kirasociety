@@ -338,17 +338,17 @@ def main():
         choice = input("Seçim yapın: ").strip()
         
         if choice == "1":
-            ddos_attack()
+            ddos_saldiri()
         elif choice == "2":
             brute_force()
         elif choice == "3":
-            port_scanner()
+            port_tarayici()
         elif choice == "4":
             ip_lookup()
         elif choice == "5":
             rat_payload_creator()
         elif choice == "6":
-            start_ip_logger()
+            ip_logger()
         elif choice == "0":
             print("Çıkış yapılıyor...")
             break
