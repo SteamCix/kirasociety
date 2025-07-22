@@ -29,7 +29,7 @@ def banner():
     print("\033[1;35mInstagram: @0xkirasociety\033[0m") 
     print("\033[91m" + ascii_art + "\033[0m")
 
-int("Geçersiz seçim!")
+print("Geçersiz seçim!")
 
 def start_ip_logger():
     banner()
