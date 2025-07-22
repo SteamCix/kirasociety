@@ -338,11 +338,11 @@ def main():
         choice = input("Seçim yapın: ").strip()
         
         if choice == "1":
-            ddos_saldiri()
+            ddos_attack()
         elif choice == "2":
             brute_force()
         elif choice == "3":
-            port_tarayici()
+            port_scanner()
         elif choice == "4":
             ip_lookup()
         elif choice == "5":
