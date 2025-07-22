@@ -325,18 +325,18 @@ def rat_payload_creator():
 def main():
     while True:
         banner()
-        print("TOOLLARIMIZ: DAHA EKLENECEK ÖNERİ İÇİN İG DM                      ")
-        print("  \033[1;33m╔════════════════════════╗\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[1] DDoS Attack       \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[2] Instagram Hack    \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[3] Port Scanner      \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[4] IP Lookup         \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[5] RAT Payload Oluştur\033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[6] IP Logger         \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m║\033[0m \033[91m[0] Exit              \033[0m\033[1;33m║\033[0m")
-        print("  \033[1;33m╚════════════════════════╝\033[0m")
-        print("\033[0m")
-        choice = input("Seç: ").strip()
+        print("  " + Fore.YELLOW + "╔════════════════════════╗" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[1] DDoS Attack       " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[2] Instagram Hack    " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[3] Port Scanner      " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[4] IP Lookup         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[5] RAT Payload Oluştur" + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[6] IP Logger         " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "║" + Style.RESET_ALL + " " + Fore.RED + "[0] Exit              " + Style.RESET_ALL + Fore.YELLOW + "║" + Style.RESET_ALL)
+        print("  " + Fore.YELLOW + "╚════════════════════════╝" + Style.RESET_ALL)
+        
+        choice = input("Seçim yapın: ").strip()
+        
         if choice == "1":
             ddos_attack()
         elif choice == "2":
@@ -350,10 +350,10 @@ def main():
         elif choice == "6":
             start_ip_logger()
         elif choice == "0":
-            print("Çıkış Yapılıyor...")
+            print("Çıkış yapılıyor...")
             break
         else:
-            print("Yanlış Seçim Kanki.")
+            print("Geçersiz seçim!")
             time.sleep(1)
 
 if __name__ == "__main__":
