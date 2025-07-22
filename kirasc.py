@@ -8,6 +8,8 @@ from datetime import datetime
 from flask import Flask, request
 import pyngrok.ngrok as ngrok
 from colorama import Fore, Style, init
+import phonenumbers
+from phonenumbers import geocoder, carrier
 
 init()
 
