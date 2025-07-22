@@ -353,7 +353,7 @@ def main():
             rat_payload_creator()
         elif choice == "6":
             start_ip_logger()
-       elif choice == "0":
+        elif choice == "0":
             print("Çıkış yapılıyor...")
             break
         else:
