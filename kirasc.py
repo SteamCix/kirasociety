@@ -238,6 +238,63 @@ def ip_lookup():
         print(f"Error: {e}")
     input("Entere Basarak Ana Menüye Dön...")
 
+def phone_lookup():
+    banner()
+    phone = input("Telefon numarası (ülke kodu ile, +9...): ").strip()
+
+    try:
+        # Numaranın parse edilmesi
+        phone_number = phonenumbers.parse(phone, None)
+
+        # Numaranın geçerliliği kontrolü
+        if not phonenumbers.is_valid_number(phone_number):
+            print("Geçersiz telefon numarası.")
+            return
+
+        # Bilgilerin alınması
+        country = geocoder.description_for_number(phone_number, "tr")  # Türkçe isim
+        operator = carrier.name_for_number(phone_number, "tr")
+
+        print("\n--- Telefon Numarası Bilgileri ---")
+        print(f"Ülke        : {country}")
+        print(f"Operatör    : {operator if operator else 'Bilinmiyor'}")
+        print(f"Uluslararası Format: {phonenumbers.format_number(phone_number, phonenumbers.PhoneNumberFormat.INTERNATIONAL)}")
+
+    except phonenumbers.NumberParseException:
+        print("Numara formatı hatalı veya tanınmadı.")
+
+    input("\nAna menüye dönmek için Enter'a basın.")
+
+# Örnek çağrı
+# phone_lookup()
+
+def username_lookup():
+    banner()
+    import requests
+
+    username = input("Kullanıcı adı girin: ").strip()
+    print(f"'{username}' için açık kaynak kullanıcı adı sorgulanıyor...")
+
+    # Örnek: https://api.hunter.io/v2/domain-search?domain=example.com (Hunter.io API örneği)
+    # Burada kullanıcı adı arama için genel bir API yok, placeholder olarak basit sorgu:
+    sources = {
+        "GitHub": f"https://api.github.com/users/{username}",
+        "Twitter": f"https://twitter.com/{username}",
+        "Instagram": f"https://www.instagram.com/{username}/",
+    }
+
+    for site, url in sources.items():
+        try:
+            r = requests.get(url)
+            if r.status_code == 200:
+                print(f"[+] {site} kullanıcısı bulundu: {url}")
+            else:
+                print(f"[-] {site} kullanıcısı bulunamadı.")
+        except Exception as e:
+            print(f"[!] {site} için hata: {e}")
+
+    input("Ana menüye dönmek için Enter'a basın.")
+
 def osint_tools():
     banner()
     print("OSINT Araçları:")
